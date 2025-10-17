@@ -1,0 +1,93 @@
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/wp-config.php
+/wp-config-sample.php
+/readme.html
+/license.txt
+
+# WordPress Cache
+*.cache
+/wp-content/cache/
+/wp-content/advanced-cache.php
+
+# WordPress Uploads
+/wp-content/uploads/
+
+# WordPress Plugins (except our custom plugin)
+/wp-content/plugins/*
+!/wp-content/plugins/shm-data-integrations/
+
+# WordPress Themes (except our custom theme)
+/wp-content/themes/*
+!/wp-content/themes/smart-health-monitoring/
+
+# WordPress Update Files
+/wp-content/upgrade/
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/blogs.dir/
+
+# WordPress Debug Log
+/wp-content/debug.log
+error_log
+
+# Node Modules
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build Files
+/dist/
+/build/
+*.min.js
+*.min.css
+*.map
+
+# Environment Files
+.env
+.env.local
+.env.production
+.htaccess
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*~
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.tmproj
+*.tmproject
+nbproject/
+
+# Composer
+/vendor/
+composer.lock
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Sensitive Data
+/wp-content/shm_encryption_key.txt
+*-credentials.json
+*.key
+*.pem
+*.p12

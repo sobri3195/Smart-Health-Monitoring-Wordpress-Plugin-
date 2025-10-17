@@ -1,0 +1,287 @@
+# Smart Health Monitoring WordPress Theme
+
+A modern, responsive WordPress theme for healthtech/telemedicine with dashboard features for displaying health metrics (blood pressure, glucose, heart rate, steps/activity).
+
+## Features
+
+- **Modern Dashboard**: Clean, intuitive user interface for health data visualization
+- **Health Metrics**: Display blood pressure, glucose, heart rate, and activity data
+- **Dark/Light Mode**: User-selectable theme with system preference detection
+- **Responsive Design**: Mobile-first approach, optimized for all screen sizes
+- **Accessible**: WCAG 2.1 AA compliant with proper ARIA labels and keyboard navigation
+- **Performance Optimized**: Lazy loading, deferred scripts, preloaded fonts
+- **Gutenberg Ready**: Full support for block editor with custom blocks
+- **Chart Integration**: Chart.js integration for data visualization
+- **Custom Page Templates**: Dashboard, Reports, and Integrations templates
+
+## Requirements
+
+- WordPress 6.0 or higher
+- PHP 7.4 or higher
+- SHM Data & Integrations Plugin (companion plugin)
+
+## Installation
+
+1. Upload the `smart-health-monitoring` folder to `/wp-content/themes/`
+2. Activate the theme through the 'Themes' menu in WordPress
+3. Install and activate the SHM Data & Integrations plugin
+4. Create pages using the provided page templates:
+   - Dashboard (Template: Dashboard)
+   - Reports (Template: Reports)
+   - Integrations (Template: Integrations)
+
+## Page Templates
+
+### Dashboard (page-dashboard.php)
+User health dashboard with:
+- Metric cards for BP, glucose, heart rate, activity
+- Health alerts
+- Trend charts
+- Recent entries log
+- Date range selector
+
+### Reports (page-reports.php)
+Health reports and data export with:
+- Date range filter
+- Metric type filter
+- Data table
+- CSV/PDF export
+- Summary statistics
+
+### Integrations (page-integrations.php)
+Wearable device integrations with:
+- Connection status cards
+- Manual sync triggers
+- Device management
+- Integration help
+
+## Customization
+
+### Theme Options
+
+Navigate to **Appearance > Customize** to access:
+- **Theme Options**
+  - Default Color Scheme (Light, Dark, Auto)
+  - Enable/Disable Animations
+- **Site Identity**
+  - Logo upload
+  - Site title and tagline
+- **Menus**
+  - Primary menu
+  - Footer menu
+- **Widgets**
+  - Dashboard sidebar
+  - Footer 1, 2, 3
+
+### CSS Variables
+
+The theme uses CSS custom properties for easy customization. Edit `style.css` to modify:
+
+```css
+:root {
+	--color-primary: #0ea5e9;
+	--color-secondary: #06b6d4;
+	--color-success: #10b981;
+	--color-warning: #f59e0b;
+	--color-danger: #ef4444;
+}
+```
+
+### Adding Custom Colors (Dark Mode)
+
+```css
+[data-theme="dark"] {
+	--color-bg: #111827;
+	--color-text: #f9fafb;
+}
+```
+
+## Child Theme Support
+
+To create a child theme:
+
+1. Create a new directory in `/wp-content/themes/`
+2. Create `style.css`:
+
+```css
+/*
+Theme Name: My Custom Health Theme
+Template: smart-health-monitoring
+*/
+```
+
+3. Create `functions.php`:
+
+```php
+<?php
+function my_child_theme_enqueue_styles() {
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'child-style', get_stylesheet_uri(), array( 'parent-style' ) );
+}
+add_action( 'wp_enqueue_scripts', 'my_child_theme_enqueue_styles' );
+```
+
+## Template Hierarchy
+
+The theme follows WordPress template hierarchy:
+- `front-page.php` - Front page
+- `page-dashboard.php` - Dashboard template
+- `page-reports.php` - Reports template
+- `page-integrations.php` - Integrations template
+- `single.php` - Single post
+- `archive.php` - Archive pages
+- `search.php` - Search results
+- `404.php` - 404 error page
+- `header.php` - Site header
+- `footer.php` - Site footer
+- `template-parts/content.php` - Post content
+
+## JavaScript API
+
+The theme exposes a global `SHMTheme` object:
+
+```javascript
+// Access theme functionality
+SHMTheme.loadDashboardData('30d');
+SHMTheme.fetchMetricData('bp', '7d');
+```
+
+Available via `shmTheme` localized script:
+```javascript
+shmTheme.ajaxUrl   // WordPress AJAX URL
+shmTheme.restUrl   // REST API base URL
+shmTheme.nonce     // REST API nonce
+shmTheme.userId    // Current user ID
+shmTheme.isDark    // Dark mode preference
+shmTheme.i18n      // Translated strings
+```
+
+## Hooks & Filters
+
+### Actions
+
+```php
+// After theme setup
+do_action( 'shm_theme_setup' );
+
+// Before loading dashboard
+do_action( 'shm_before_dashboard' );
+
+// After loading dashboard
+do_action( 'shm_after_dashboard' );
+```
+
+### Filters
+
+```php
+// Modify body classes
+add_filter( 'shm_body_classes', function( $classes ) {
+	$classes[] = 'my-custom-class';
+	return $classes;
+} );
+
+// Modify content width
+add_filter( 'shm_theme_content_width', function( $width ) {
+	return 1400;
+} );
+```
+
+## Template Functions
+
+### Helper Functions
+
+```php
+// Get user avatar
+shm_theme_get_user_avatar( $user_id, $size );
+
+// Display user greeting
+shm_theme_user_greeting();
+
+// Display dark mode toggle
+shm_theme_dark_mode_toggle();
+
+// Display breadcrumbs
+shm_theme_breadcrumbs();
+
+// Format date range
+shm_theme_format_date_range( $from, $to );
+
+// Display status badge
+shm_theme_status_badge( $status, $label );
+
+// Display pagination
+shm_theme_pagination();
+```
+
+## Performance Optimization
+
+The theme is optimized for performance:
+- Lazy loading for images
+- Deferred JavaScript loading
+- Preloaded fonts
+- Minified assets (in production)
+- Transient caching for API calls
+- Skeleton loading states
+
+## Accessibility
+
+WCAG 2.1 AA compliant features:
+- Proper heading hierarchy
+- ARIA labels and roles
+- Keyboard navigation support
+- Focus indicators
+- Skip to content link
+- High contrast support
+- Screen reader friendly
+
+## Browser Support
+
+- Chrome (last 2 versions)
+- Firefox (last 2 versions)
+- Safari (last 2 versions)
+- Edge (last 2 versions)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Troubleshooting
+
+### Charts Not Displaying
+
+Ensure Chart.js is loaded:
+```php
+wp_enqueue_script( 'chart-js', 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js', array(), '4.4.0', true );
+```
+
+### Dark Mode Not Working
+
+Check localStorage is enabled and theme preference is saved:
+```javascript
+localStorage.getItem('shm-theme');
+```
+
+### Plugin Not Found Errors
+
+Install and activate the SHM Data & Integrations plugin.
+
+## License
+
+GPL v2 or later
+
+## Credits
+
+- Chart.js for data visualization
+- WordPress Block Editor
+- Feather Icons (conceptual reference)
+
+## Support
+
+For support, please contact the development team or submit an issue in the project repository.
+
+## Changelog
+
+### Version 1.0.0
+- Initial release
+- Dashboard, Reports, and Integrations templates
+- Dark/Light mode
+- Gutenberg integration
+- WCAG 2.1 AA compliance
+- Mobile-responsive design

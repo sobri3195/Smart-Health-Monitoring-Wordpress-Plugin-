@@ -1,0 +1,214 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#0ea5e9",
+					"name": "Primary"
+				},
+				{
+					"slug": "primary-dark",
+					"color": "#0284c7",
+					"name": "Primary Dark"
+				},
+				{
+					"slug": "secondary",
+					"color": "#06b6d4",
+					"name": "Secondary"
+				},
+				{
+					"slug": "success",
+					"color": "#10b981",
+					"name": "Success"
+				},
+				{
+					"slug": "warning",
+					"color": "#f59e0b",
+					"name": "Warning"
+				},
+				{
+					"slug": "danger",
+					"color": "#ef4444",
+					"name": "Danger"
+				},
+				{
+					"slug": "text",
+					"color": "#1f2937",
+					"name": "Text"
+				},
+				{
+					"slug": "background",
+					"color": "#ffffff",
+					"name": "Background"
+				},
+				{
+					"slug": "background-secondary",
+					"color": "#f9fafb",
+					"name": "Background Secondary"
+				}
+			],
+			"custom": true,
+			"link": true
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+					"slug": "sans",
+					"name": "Sans Serif"
+				},
+				{
+					"fontFamily": "'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace",
+					"slug": "mono",
+					"name": "Monospace"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "xs",
+					"size": "0.75rem",
+					"name": "Extra Small"
+				},
+				{
+					"slug": "sm",
+					"size": "0.875rem",
+					"name": "Small"
+				},
+				{
+					"slug": "base",
+					"size": "1rem",
+					"name": "Base"
+				},
+				{
+					"slug": "lg",
+					"size": "1.125rem",
+					"name": "Large"
+				},
+				{
+					"slug": "xl",
+					"size": "1.25rem",
+					"name": "Extra Large"
+				},
+				{
+					"slug": "2xl",
+					"size": "1.5rem",
+					"name": "2X Large"
+				},
+				{
+					"slug": "3xl",
+					"size": "1.875rem",
+					"name": "3X Large"
+				},
+				{
+					"slug": "4xl",
+					"size": "2.25rem",
+					"name": "4X Large"
+				}
+			],
+			"customFontSize": true
+		},
+		"spacing": {
+			"spacingSizes": [
+				{
+					"slug": "sm",
+					"size": "0.5rem",
+					"name": "Small"
+				},
+				{
+					"slug": "md",
+					"size": "1rem",
+					"name": "Medium"
+				},
+				{
+					"slug": "lg",
+					"size": "2rem",
+					"name": "Large"
+				},
+				{
+					"slug": "xl",
+					"size": "4rem",
+					"name": "Extra Large"
+				}
+			],
+			"units": ["px", "em", "rem", "vh", "vw", "%"]
+		},
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1200px"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--text)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--sans)",
+			"fontSize": "var(--wp--preset--font-size--base)",
+			"lineHeight": "1.5"
+		},
+		"spacing": {
+			"blockGap": "1rem"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				},
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--primary-dark)"
+					}
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--4-xl)",
+					"fontWeight": "600",
+					"lineHeight": "1.2"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--3-xl)",
+					"fontWeight": "600",
+					"lineHeight": "1.2"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--2-xl)",
+					"fontWeight": "600",
+					"lineHeight": "1.2"
+				}
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "#ffffff"
+				},
+				"border": {
+					"radius": "0.375rem"
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	]
+}

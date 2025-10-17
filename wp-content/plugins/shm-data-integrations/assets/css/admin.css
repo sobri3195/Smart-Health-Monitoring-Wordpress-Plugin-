@@ -1,0 +1,162 @@
+/* SHM Admin Styles */
+
+.shm-dashboard {
+	max-width: 1400px;
+}
+
+.shm-notice {
+	background: #fff3cd;
+	border-left: 4px solid #ffc107;
+	padding: 15px;
+	margin: 20px 0;
+	border-radius: 4px;
+}
+
+.shm-metrics-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.shm-metric-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.shm-metric-card h3 {
+	margin: 0 0 15px 0;
+	font-size: 16px;
+	color: #666;
+	font-weight: 600;
+}
+
+.shm-metric-value {
+	font-size: 32px;
+	font-weight: 700;
+	color: #333;
+	line-height: 1;
+	margin-bottom: 5px;
+}
+
+.shm-unit {
+	font-size: 14px;
+	color: #999;
+	font-weight: 400;
+	margin-left: 5px;
+}
+
+.shm-metric-label {
+	font-size: 12px;
+	color: #999;
+	margin-top: 5px;
+}
+
+.shm-charts {
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 20px 0;
+}
+
+.shm-badge {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.shm-badge-info {
+	background: #e3f2fd;
+	color: #1976d2;
+}
+
+.shm-badge-warning {
+	background: #fff3cd;
+	color: #856404;
+}
+
+.shm-badge-error,
+.shm-badge-critical {
+	background: #f8d7da;
+	color: #721c24;
+}
+
+.shm-alert-warning {
+	background: #fff9e6;
+}
+
+.shm-integrations-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.shm-integration-card {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.shm-integration-card h3 {
+	margin: 0 0 15px 0;
+	font-size: 18px;
+}
+
+.shm-status {
+	display: inline-block;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.shm-status-connected {
+	background: #d4edda;
+	color: #155724;
+}
+
+.shm-status-disconnected {
+	background: #f8d7da;
+	color: #721c24;
+}
+
+.shm-last-sync {
+	font-size: 12px;
+	color: #666;
+	margin: 10px 0;
+}
+
+.shm-integration-actions {
+	margin-top: 15px;
+	display: flex;
+	gap: 10px;
+}
+
+.shm-disclaimer {
+	background: #fff3cd;
+	border: 1px solid #ffc107;
+	padding: 20px;
+	margin: 30px 0;
+	border-radius: 4px;
+}
+
+.shm-disclaimer h3 {
+	margin-top: 0;
+	color: #856404;
+}
+
+.shm-disclaimer p {
+	margin: 0;
+	color: #856404;
+}
