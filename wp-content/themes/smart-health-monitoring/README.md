@@ -4,6 +4,7 @@ A modern, responsive WordPress theme for healthtech/telemedicine with dashboard 
 
 ## Features
 
+### Core Features
 - **Modern Dashboard**: Clean, intuitive user interface for health data visualization
 - **Health Metrics**: Display blood pressure, glucose, heart rate, and activity data
 - **Dark/Light Mode**: User-selectable theme with system preference detection
@@ -13,6 +14,75 @@ A modern, responsive WordPress theme for healthtech/telemedicine with dashboard 
 - **Gutenberg Ready**: Full support for block editor with custom blocks
 - **Chart Integration**: Chart.js integration for data visualization
 - **Custom Page Templates**: Dashboard, Reports, and Integrations templates
+
+### 10 New Advanced Health Features
+
+1. **Appointment Scheduler**
+   - Schedule appointments with healthcare providers
+   - Track appointment type, location, and notes
+   - Automatic reminder system
+   - View upcoming and past appointments
+
+2. **Medication Reminder System**
+   - Track all medications with dosage information
+   - Set frequency and reminder times
+   - Manage start and end dates
+   - Store special instructions
+
+3. **Health Goals Tracker**
+   - Set personalized health goals (weight, exercise, steps, etc.)
+   - Track progress with visual progress bars
+   - Monitor target vs. current values
+   - Add notes and track deadlines
+
+4. **Emergency Contact Manager**
+   - Store emergency contacts with complete information
+   - Multiple phone numbers and email addresses
+   - Set primary contact
+   - Quick access to emergency information
+
+5. **Health Journal & Daily Notes**
+   - Daily health diary entries
+   - Track mood, energy levels, and sleep quality
+   - Searchable notes with tags
+   - Private entries with date tracking
+
+6. **Symptom Checker & Tracker**
+   - Log symptoms with severity ratings (1-10)
+   - Track body location and duration
+   - Record triggers and relieving factors
+   - Frequency tracking (constant, intermittent, occasional)
+
+7. **Water Intake Tracker**
+   - Track daily water consumption
+   - Quick add buttons (250ml, 500ml, 750ml, 1L)
+   - Customizable daily goals
+   - Visual progress indicators
+   - Historical tracking
+
+8. **Sleep Quality Tracker**
+   - Record bedtime and wake time
+   - Track sleep quality ratings
+   - Monitor sleep interruptions
+   - Dream recall tracking
+   - Mood on wake assessment
+   - 7-day average calculations
+
+9. **BMI Calculator & Tracker**
+   - Calculate BMI with instant results
+   - Track weight and height over time
+   - BMI category classification
+   - Support for metric and imperial units
+   - Historical BMI chart
+   - Health category indicators
+
+10. **Health Document Manager**
+    - Upload and store health documents (PDF, JPG, PNG)
+    - Organize by document type (lab reports, prescriptions, x-rays, etc.)
+    - Tag documents for easy searching
+    - Secure, private document storage
+    - Quick view and download options
+    - Delete management
 
 ## Requirements
 
@@ -55,6 +125,24 @@ Wearable device integrations with:
 - Device management
 - Integration help
 
+### Health Features Dashboard (page-features.php)
+Comprehensive health management interface with all 10 new features:
+- Appointments scheduling and management
+- Medication tracking and reminders
+- Health goals and progress monitoring
+- Emergency contacts management
+- Daily health journal entries
+- Symptom tracking and logging
+- Water intake monitoring
+- Sleep quality tracking
+- BMI calculator with history
+- Health document storage
+
+To create a Health Features page:
+1. Create a new page in WordPress
+2. Select "Health Features Dashboard" as the page template
+3. Publish and access all features from one unified interface
+
 ## Customization
 
 ### Theme Options
@@ -79,11 +167,11 @@ The theme uses CSS custom properties for easy customization. Edit `style.css` to
 
 ```css
 :root {
-	--color-primary: #0ea5e9;
-	--color-secondary: #06b6d4;
-	--color-success: #10b981;
-	--color-warning: #f59e0b;
-	--color-danger: #ef4444;
+    --color-primary: #0ea5e9;
+    --color-secondary: #06b6d4;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
 }
 ```
 
@@ -91,8 +179,8 @@ The theme uses CSS custom properties for easy customization. Edit `style.css` to
 
 ```css
 [data-theme="dark"] {
-	--color-bg: #111827;
-	--color-text: #f9fafb;
+    --color-bg: #111827;
+    --color-text: #f9fafb;
 }
 ```
 
@@ -115,8 +203,8 @@ Template: smart-health-monitoring
 ```php
 <?php
 function my_child_theme_enqueue_styles() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'child-style', get_stylesheet_uri(), array( 'parent-style' ) );
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style', get_stylesheet_uri(), array( 'parent-style' ) );
 }
 add_action( 'wp_enqueue_scripts', 'my_child_theme_enqueue_styles' );
 ```
@@ -176,13 +264,13 @@ do_action( 'shm_after_dashboard' );
 ```php
 // Modify body classes
 add_filter( 'shm_body_classes', function( $classes ) {
-	$classes[] = 'my-custom-class';
-	return $classes;
+    $classes[] = 'my-custom-class';
+    return $classes;
 } );
 
 // Modify content width
 add_filter( 'shm_theme_content_width', function( $width ) {
-	return 1400;
+    return 1400;
 } );
 ```
 
@@ -276,7 +364,115 @@ GPL v2 or later
 
 For support, please contact the development team or submit an issue in the project repository.
 
+## Using the Health Features
+
+### Displaying Features in Your Theme
+
+You can display individual features anywhere in your theme by calling their widget functions:
+
+```php
+// Display appointments widget
+shm_appointments_widget();
+
+// Display medications widget
+shm_medications_widget();
+
+// Display health goals widget
+shm_health_goals_widget();
+
+// Display emergency contacts widget
+shm_emergency_contacts_widget();
+
+// Display health journal widget
+shm_health_journal_widget();
+
+// Display symptom tracker widget
+shm_symptom_tracker_widget();
+
+// Display water tracker widget
+shm_water_tracker_widget();
+
+// Display sleep tracker widget
+shm_sleep_tracker_widget();
+
+// Display BMI calculator widget
+shm_bmi_calculator_widget();
+
+// Display document manager widget
+shm_document_manager_widget();
+```
+
+### AJAX Endpoints
+
+All features use AJAX for data management. Available actions:
+
+**Appointments:**
+- `shm_add_appointment` - Add new appointment
+- `shm_get_appointments` - Get user appointments
+
+**Medications:**
+- `shm_add_medication` - Add new medication
+- `shm_get_medications` - Get user medications
+
+**Health Goals:**
+- `shm_add_health_goal` - Add new goal
+- `shm_update_health_goal` - Update goal progress
+- `shm_get_health_goals` - Get user goals
+
+**Emergency Contacts:**
+- `shm_add_emergency_contact` - Add new contact
+- `shm_get_emergency_contacts` - Get user contacts
+
+**Health Journal:**
+- `shm_add_journal_entry` - Add new entry
+- `shm_get_journal_entries` - Get user entries
+
+**Symptom Tracker:**
+- `shm_add_symptom` - Log new symptom
+- `shm_get_symptoms` - Get user symptoms
+
+**Water Tracker:**
+- `shm_add_water_intake` - Log water intake
+- `shm_get_water_today` - Get today's water intake
+
+**Sleep Tracker:**
+- `shm_add_sleep_record` - Add sleep record
+- `shm_get_sleep_records` - Get sleep records
+
+**BMI Calculator:**
+- `shm_add_bmi_record` - Add BMI record
+- `shm_get_bmi_records` - Get BMI records
+
+**Document Manager:**
+- `shm_upload_document` - Upload document
+- `shm_get_documents` - Get user documents
+- `shm_delete_document` - Delete document
+
+### Database Tables
+
+The features create the following database tables:
+- `wp_shm_appointments` - Appointment records
+- `wp_shm_medications` - Medication tracking
+- `wp_shm_health_goals` - Health goals
+- `wp_shm_emergency_contacts` - Emergency contacts
+- `wp_shm_health_journal` - Journal entries
+- `wp_shm_symptoms` - Symptom logs
+- `wp_shm_water_intake` - Water intake records
+- `wp_shm_sleep_records` - Sleep tracking
+- `wp_shm_bmi_records` - BMI history
+- `wp_shm_health_documents` - Document metadata
+
+Tables are created automatically on theme activation.
+
 ## Changelog
+
+### Version 1.1.0
+- Added 10 new advanced health features
+- New Health Features Dashboard template
+- Enhanced feature management system
+- Individual feature widgets
+- Comprehensive AJAX API
+- Dark mode support for all features
 
 ### Version 1.0.0
 - Initial release
