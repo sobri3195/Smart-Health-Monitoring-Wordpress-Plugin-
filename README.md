@@ -110,12 +110,25 @@ wp shm export --user=1 --range=30d --format=csv
 - Export personal health data
 - Access health education content
 
+**10 New Advanced Health Features:**
+1. **Appointment Scheduler** - Schedule and manage healthcare appointments
+2. **Medication Reminder System** - Track medications and set reminders
+3. **Health Goals Tracker** - Set and monitor health goals with progress tracking
+4. **Emergency Contact Manager** - Store and manage emergency contacts
+5. **Health Journal** - Daily health diary with mood and energy tracking
+6. **Symptom Tracker** - Log and monitor symptoms with severity ratings
+7. **Water Intake Tracker** - Track daily hydration with visual progress
+8. **Sleep Quality Tracker** - Monitor sleep patterns and quality
+9. **BMI Calculator & Tracker** - Calculate and track BMI over time
+10. **Health Document Manager** - Upload and organize medical documents
+
 ### For Clinicians
 - View assigned patient data
 - Create clinical notes
 - Manage health alerts
 - Generate patient reports
 - Monitor multiple patients
+- Access patient health features data
 
 ### For Administrators
 - Full system access
@@ -124,6 +137,7 @@ wp shm export --user=1 --range=30d --format=csv
 - View audit logs
 - Export all data
 - Configure threshold alerts
+- Manage all health features
 
 ## 📊 Database Schema
 
